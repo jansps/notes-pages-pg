@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pg官网 · 稳定入口说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce5d9 0%, #f8d5c0 60%, #f2c1a5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.2rem;
+            line-height: 1.7;
+            color: #2c241f;
+        }
+
+        .page-wrap {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* 主卡片容器 */
+        .content-card {
+            background: #fffcf9;
+            border-radius: 36px 36px 28px 28px;
+            box-shadow: 0 20px 36px -12px rgba(140, 80, 50, 0.28), 0 6px 12px rgba(0,0,0,0.03);
+            padding: 2.5rem 2.2rem 2.8rem;
+            backdrop-filter: blur(2px);
+            transition: box-shadow 0.2s;
+        }
+
+        @media (max-width: 600px) {
+            .content-card {
+                padding: 1.8rem 1.2rem 2rem;
+                border-radius: 28px;
+            }
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+        }
+
+        /* 页眉式 hero 区 — 更偏目录说明 */
+        .hero-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-label span {
+            background: #f1ddd0;
+            color: #5a3f30;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #362a22;
+            margin-bottom: 0.2rem;
+            line-height: 1.25;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #6e5545;
+            border-left: 4px solid #c99272;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.2rem 0;
+        }
+
+        /* 目录感布局：两列 + 全宽卡片 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.8rem 0 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+
+        .grid-card {
+            background: #faf3ed;
+            border-radius: 20px;
+            padding: 1.1rem 1.3rem 1.3rem;
+            box-shadow: inset 0 1px 4px rgba(255,255,240,0.8), 0 2px 6px rgba(100, 60, 40, 0.08);
+        }
+
+        .grid-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #4f392b;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .grid-card p, .grid-card ul {
+            font-size: 0.95rem;
+            color: #3d312a;
+            margin: 0.2rem 0;
+        }
+
+        .grid-card ul {
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+
+        .grid-card li {
+            padding: 0.2rem 0 0.2rem 1.2rem;
+            position: relative;
+        }
+
+        .grid-card li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #b67957;
+            font-weight: bold;
+        }
+
+        /* 提示区 + 相关信息区 */
+        .note-area {
+            background: #faf0e9;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0 0.5rem;
+            border-left: 6px solid #dbb09a;
+        }
+
+        .note-area p {
+            margin: 0.4rem 0;
+            font-size: 0.95rem;
+        }
+
+        .extra-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.8rem;
+            background: #fff7f2;
+            border-radius: 40px;
+            padding: 1rem 1.5rem;
+            margin-top: 1.6rem;
+            border: 1px solid #eedbcf;
+        }
+
+        .extra-info small {
+            color: #7a6254;
+            font-size: 0.85rem;
+        }
+
+        /* 链接样式：圆角按钮感 */
+        .link-btn {
+            display: inline-block;
+            background: #dbb09a;
+            color: #2f221c;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 2px 4px rgba(120, 70, 45, 0.1);
+            border: 1px solid #e7c9b8;
+            font-size: 0.95rem;
+        }
+
+        .link-btn:hover {
+            background: #cfa085;
+            box-shadow: 0 4px 10px rgba(140, 80, 55, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .link-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* 句子中的自然链接（按钮风格但更轻） */
+        .inline-link {
+            background: #f0dbcf;
+            color: #3b2c23;
+            padding: 0.1rem 0.9rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.15s, box-shadow 0.15s;
+            white-space: nowrap;
+            border: 1px solid #e2c5b3;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .inline-link:hover {
+            background: #e6c8b6;
+            box-shadow: 0 2px 6px rgba(120,75,55,0.12);
+        }
+
+        .faq-mini {
+            margin-top: 1.2rem;
+            border-top: 2px dashed #edd9cd;
+            padding-top: 1.2rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #4b372c;
+            margin: 0.6rem 0 0.1rem 0;
+        }
+
+        .faq-a {
+            color: #4d3c32;
+            padding-left: 0.3rem;
+            font-size: 0.92rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #edd7cb;
+            margin: 1rem 0;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #7c6557;
+            opacity: 0.7;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            .subhead {
+                font-size: 1rem;
+                padding-left: 0.8rem;
+            }
+            .extra-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0.9rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <div class="content-card">
+
+        <!-- hero 区：目录感标题 + 引导 -->
+        <div class="hero-label">
+            <span>pg官网 · 知识库入口</span>
+            <span>稳定入口说明</span>
+        </div>
+        <h1>pg官网 · 页面入口与使用说明</h1>
+        <div class="subhead">
+            基于目录感布局整理：从入口到信息区，清晰分区
+        </div>
+
+        <!-- 两列卡片：介绍 + 特点 / 场景 -->
+        <div class="info-grid">
+            <div class="grid-card">
+                <h3>📋 介绍 · 入口角色</h3>
+                <p><a href="https://pages-pg.com" class="inline-link">pg官网</a> 定位为整合性知识库的稳定入口。本站围绕核心资源提供结构化说明，避免信息过载，帮助使用者快速定位所需内容。</p>
+                <p style="margin-top: 0.5rem;">页面不追踪、不收集个人信息，仅用作导航与说明。</p>
+            </div>
+            <div class="grid-card">
+                <h3>⚙️ 结构特点</h3>
+                <ul>
+                    <li>分区说明：介绍区、提示区、FAQ摘要</li>
+                    <li>入口清晰：每个链接均直接指向对应资源</li>
+                    <li>轻量响应：移动端与桌面均保持可读性</li>
+                    <li>暖色基调：减少阅读压迫感</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 提示区（融入稳定入口说明） -->
+        <div class="note-area">
+            <p><strong>🔔 提示：</strong> 如果你正在寻找关于 pg 相关资源或说明的第一站，<a href="https://pages-pg.com" class="inline-link">pg官网</a> 是经过整理的稳定入口。页面内容保持克制更新，不包含夸大宣传或未经核实的信息。</p>
+            <p>建议将本页加入书签，作为日后回溯的固定起点。所有链接均指向原始出处，如有疑问可参考 FAQ 摘要或直接浏览站点。</p>
+        </div>
+
+        <!-- 相关信息区 + FAQ 摘要 -->
+        <div class="extra-info">
+            <span><strong>相关信息</strong> · 内容版本 2025</span>
+            <span>📌 页面方向：知识库入口 · 目录感布局</span>
+        </div>
+
+        <div class="faq-mini">
+            <div class="faq-q">❓ 这个页面与 pg 官网的关系是什么？</div>
+            <div class="faq-a">本页是 <a href="https://pages-pg.com" class="inline-link">pg官网</a> 的独立说明页，旨在提供入口介绍、使用提示以及 FAQ 摘要。它本身并不替代官网全部内容，而是作为辅助性的知识库入口。</div>
+
+            <div class="faq-q">❓ 我可以依赖这里的链接吗？</div>
+            <div class="faq-a">是的。所有链接均经过核对，指向稳定的官方或说明页面。如果未来有调整，本页会同步更新。建议以 <a href="https://pages-pg.com" class="inline-link">pg官网</a> 为准。</div>
+
+            <div class="faq-q">❓ 为什么使用暖色与卡片布局？</div>
+            <div class="faq-a">为降低视觉疲劳，采用暖色渐变背景和白色卡片，配合圆角按钮感链接，使信息分区更自然。目录感布局帮助你快速区分介绍、提示和 FAQ 区域。</div>
+        </div>
+
+        <hr>
+
+        <p style="font-size: 0.9rem; color: #573f32; text-align: center;">
+            📎 本说明页由 <a href="https://pages-pg.com" class="inline-link">pg官网</a> 提供稳定入口支持 · 内容真实克制
+        </p>
+
+        <div class="footer-note">
+            仅作为入口说明 · 无诱导性表述 · 专注清晰与实用
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
