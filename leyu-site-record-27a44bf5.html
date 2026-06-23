@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>乐鱼 · 探索自然与想象的交汇</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(145deg, #fff1e0 0%, #fde7d6 48%, #fbd5c0 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.4rem 1.6rem;
+    }
+
+    .card {
+      max-width: 860px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(2px);
+      border-radius: 48px 16px 48px 16px;
+      box-shadow: 0 24px 48px -16px rgba(180, 90, 40, 0.24);
+      padding: 3.2rem 2.8rem;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 235, 215, 0.6);
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1.6rem 1rem; }
+      .card { padding: 2rem 1.6rem; border-radius: 32px 12px 32px 12px; }
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 540;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #7b3b1e;
+      margin-bottom: 0.6rem;
+      position: relative;
+    }
+    h1::after {
+      content: "";
+      display: block;
+      width: 3.2rem;
+      height: 4px;
+      background: #d99b70;
+      border-radius: 4px;
+      margin-top: 0.6rem;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      font-weight: 380;
+      color: #7e5640;
+      margin: 0.4rem 0 1.8rem 0;
+      line-height: 1.5;
+      max-width: 70%;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.4rem; }
+      .subhead { max-width: 100%; }
+    }
+
+    .intro {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #2f1f14;
+      background: #fdf3eb;
+      padding: 1.4rem 1.8rem;
+      border-radius: 24px 8px 24px 8px;
+      margin-bottom: 2.2rem;
+      border-left: 6px solid #c58152;
+    }
+
+    .body-text {
+      font-size: 1rem;
+      line-height: 1.78;
+      color: #2b1b10;
+      margin-bottom: 1.6rem;
+    }
+
+    .body-text strong {
+      color: #914f26;
+      font-weight: 540;
+    }
+
+    .quote-block {
+      background: #fff6ed;
+      border-radius: 24px 8px 24px 8px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 1.8rem 0;
+      font-style: normal;
+      box-shadow: inset 0 1px 4px rgba(150, 70, 20, 0.06);
+      position: relative;
+    }
+    .quote-block p {
+      font-size: 1.04rem;
+      line-height: 1.7;
+      color: #4a2f1d;
+    }
+    .quote-block::before {
+      content: "✦";
+      font-size: 1.8rem;
+      color: #c58152;
+      display: block;
+      margin-bottom: 0.4rem;
+      opacity: 0.5;
+    }
+
+    .link-sentence {
+      background: #faeade;
+      border-radius: 40px 10px 40px 10px;
+      padding: 1rem 1.8rem;
+      display: inline-block;
+      margin: 0.6rem 0 2rem 0;
+      font-size: 1.04rem;
+      color: #281b10;
+    }
+
+    .link-sentence a {
+      color: #a55a30;
+      font-weight: 560;
+      text-decoration: none;
+      border-bottom: 2px solid #d9a77a;
+      padding-bottom: 0.08rem;
+      transition: all 0.15s;
+    }
+    .link-sentence a:hover {
+      background: #d9a07730;
+      border-bottom-color: #b26636;
+    }
+
+    .faq-summary {
+      margin-top: 2.6rem;
+      border-top: 2px dashed #dbb89a;
+      padding-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.6rem;
+    }
+    .faq-item {
+      flex: 1 1 180px;
+      background: #fcf3eb;
+      padding: 0.8rem 1.2rem;
+      border-radius: 20px 6px 20px 6px;
+    }
+    .faq-item .q {
+      font-weight: 530;
+      font-size: 0.95rem;
+      color: #6b3f26;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .faq-item .a {
+      font-size: 0.9rem;
+      color: #3e271b;
+      line-height: 1.5;
+    }
+
+    .footer-note {
+      text-align: right;
+      font-size: 0.85rem;
+      color: #8e6a53;
+      margin-top: 2.6rem;
+      letter-spacing: 0.2px;
+      border-top: 1px solid #e4cfbe;
+      padding-top: 1.4rem;
+    }
+    .footer-note span {
+      background: #f5e1d2;
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: #fff5ed;
+      border: 1px solid #c9946e;
+      border-radius: 40px 8px 40px 8px;
+      padding: 0.3rem 1.4rem;
+      color: #754226;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: 0.15s;
+      font-weight: 460;
+    }
+    .btn-outline:hover {
+      background: #c58152;
+      color: #fff;
+      border-color: #a86234;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>乐鱼</h1>
+    <div class="subhead">从一条鱼开始，游向更开阔的叙事</div>
+
+    <div class="intro">
+      “乐鱼”不仅是名字，更像一种观看方式——在自然与符号之间，寻找轻盈的讲述。  
+      本文围绕这一关键词背后的文化意象与日常场景展开，不堆砌概念，只描摹轮廓。
+    </div>
+
+    <div class="body-text">
+      <strong>一 · 水中游弋的隐喻</strong>  
+      鱼在东方语境里常与“余”“愉”谐音，象征丰足与自在。而“乐”字又赋予一层主动的愉悦感——不是被动的观赏，而是与游鱼一同保持流动。  
+      当我们说“乐鱼”，更像在描述一种状态：对微小生命的体察，对节奏的顺应。这种观察不需要专业背景，只需一点耐心和开放的视线。
+    </div>
+
+    <div class="body-text">
+      <strong>二 · 日常里的自然触点</strong>  
+      无论是山涧溪流、城市水族馆，还是案头的一小缸青鳉，鱼的存在总能让空间安静下来。它们不发出声音，却用游动路径画出时间。  
+      许多人在疲惫时选择注视鱼缸，不是为了获取知识，而是为了在重复的摆动里获得片刻喘息。这正是“乐鱼”背后最朴素的吸引力——无需解释，只需在场。
+    </div>
+
+    <div class="quote-block">
+      <p>“每一条鱼都带着自己的节奏，既不追赶，也不停留。你看着它们，其实是在看一种没有目标的专注。”</p>
+      <p style="margin-top: 0.6rem; font-size: 0.92rem; color: #6b4a33;">—— 摘自一次水边闲聊</p>
+    </div>
+
+    <div class="body-text">
+      <strong>三 · 从观赏到参与</strong>  
+      有人因一条斗鱼开始了解水质与生态，有人因为孩子的提问翻开了淡水图鉴。兴趣往往从最简单的“好看”开始，然后慢慢长出根系。  
+      这里没有必须掌握的术语，也没有标准答案。如果你恰好也对这类安静的生命力有些好奇，不妨从<a href="https://leyu--site.com" style="color: #a45a2e; font-weight: 560; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #d9a77a; background: transparent; padding: 0 2px;">乐鱼</a>开始，看看它会把你带向哪段具体而微的旅程。
+    </div>
+
+    <div class="link-sentence">
+      📎 关于鱼与日常的更多记录，可以在 <a href="https://leyu--site.com">乐鱼</a> 找到索引与随笔。
+    </div>
+
+    <div class="faq-summary">
+      <div class="faq-item">
+        <span class="q">❓ “乐鱼”适合哪些人？</span>
+        <span class="a">对自然观察、水族兴趣、安静内容有兴趣的读者，或者只是需要一个放松的角落。</span>
+      </div>
+      <div class="faq-item">
+        <span class="q">❓ 内容风格偏向？</span>
+        <span class="a">尽量平实、具体，不刻意煽情也不堆积术语。像朋友聊天，但信息量保持在线。</span>
+      </div>
+      <div class="faq-item">
+        <span class="q">❓ 如何开始了解？</span>
+        <span class="a">从一篇短文、一张照片或一段游动视频开始。不必从头读起，随意浏览即可。</span>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span>· 简洁 · 自然 · 日常 ·</span>
+      <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #957057;">— 持续更新，慢慢生长 —</div>
+    </div>
+
+    <div style="margin-top: 1.6rem; text-align: left;">
+      <a href="https://leyu--site.com" class="btn-outline">乐鱼</a>
+    </div>
+  </div>
+</body>
+</html>
