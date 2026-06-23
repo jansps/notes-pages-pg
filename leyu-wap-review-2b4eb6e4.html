@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>乐鱼 · 再次访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #faf7f2;
+            color: #2e2b27;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+        .page {
+            max-width: 840px;
+            margin: 0 auto;
+            background-color: #fffdf9;
+            border-radius: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+            padding: 2.5rem 2rem;
+        }
+        @media (max-width: 500px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .page {
+                padding: 1.8rem 1.2rem;
+                border-radius: 20px;
+            }
+        }
+
+        /* 标题体系 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #2c241e;
+            margin-bottom: 0.5rem;
+            border-left: 6px solid #b7a48b;
+            padding-left: 1rem;
+        }
+        .subhead {
+            color: #6a5e52;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            padding-left: 1.3rem;
+            border-bottom: 1px solid #e6ddd4;
+            padding-bottom: 0.6rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #3d352e;
+            margin: 2rem 0 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        h2:before {
+            content: "◆";
+            font-size: 0.75rem;
+            color: #b7a48b;
+            margin-right: 0.25rem;
+        }
+
+        /* 段落 & 链接 */
+        p {
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+        }
+        a {
+            color: #775e48;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #cfc0b1;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #4a3b30;
+            text-decoration-color: #775e48;
+        }
+
+        /* 卡片区域 —— 目录感布局 */
+        .index-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+        @media (max-width: 520px) {
+            .index-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        .index-card {
+            background: #f7f2ec;
+            border-radius: 16px;
+            padding: 1.2rem 1.2rem 1.5rem;
+            transition: background 0.15s;
+        }
+        .index-card:hover {
+            background: #f0e9e0;
+        }
+        .index-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #3d352e;
+            margin-bottom: 0.3rem;
+        }
+        .index-card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: #ddd2c6;
+            color: #3d352e;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+            margin-bottom: 0.6rem;
+        }
+        .index-card p {
+            font-size: 0.95rem;
+            color: #4d4239;
+            margin-bottom: 0;
+        }
+
+        /* 引用块 / 提示框 */
+        .notice-box {
+            background: #f3ede6;
+            border-left: 5px solid #bfad9a;
+            padding: 1rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.8rem 0;
+            font-size: 0.98rem;
+        }
+        .notice-box strong {
+            color: #3d2c1f;
+            font-weight: 500;
+        }
+
+        .tip-block {
+            background: #ece4da;
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+        .tip-block .icon {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        .tip-block .text {
+            flex: 1;
+        }
+        .tip-block .text p {
+            margin-bottom: 0.3rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-group {
+            margin: 1.5rem 0 0.5rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e6ddd4;
+            padding: 0.7rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #3d352e;
+            margin-bottom: 0.15rem;
+        }
+        .faq-a {
+            color: #5d5247;
+            font-size: 0.95rem;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e6ddd4;
+            font-size: 0.9rem;
+            color: #7a6e61;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>乐鱼 · 持续翻阅</h1>
+    <div class="subhead">再次回来，像翻开一本常读常新的笔记</div>
+
+    <!-- 提示区 + 介绍 -->
+    <p>
+        有时候我们匆匆访问一个站点，转头就忘记收藏。等到下次想找回，却要在搜索记录里反复翻找。<strong>乐鱼</strong> 的内容偏向生活化与知识积累，如果你对某个主题感兴趣，不妨把它当作一个可以随时回来翻翻的地方。
+    </p>
+    <p>
+        这里没有浮夸的推送，只有慢慢积攒下来的分类与记录。无论你是第一次来，还是打算长期关注，下面几个小区域能帮你快速了解 <a href="https://leyu--wap.com">乐鱼</a> 的骨架。
+    </p>
+
+    <!-- 目录感布局：卡片区 -->
+    <div class="index-grid">
+        <div class="index-card">
+            <span class="tag">📂 索引</span>
+            <h3>分类浏览</h3>
+            <p>文章按话题分栏，从日常随笔到实用工具，入口清晰，减少信息堆叠。</p>
+        </div>
+        <div class="index-card">
+            <span class="tag">🔖 标记</span>
+            <h3>收藏点</h3>
+            <p>遇到感兴趣的内容，不妨直接收藏页面。也可以使用浏览器书签，下次直达。</p>
+        </div>
+        <div class="index-card">
+            <span class="tag">📌 常读</span>
+            <h3>反复翻阅</h3>
+            <p>知识库的价值在于回看。同一篇文章，隔段时间再读，感受会不一样。</p>
+        </div>
+        <div class="index-card">
+            <span class="tag">📬 关注</span>
+            <h3>保持感知</h3>
+            <p>定期回访，或者把 <strong>乐鱼</strong> 加入阅读列表，慢慢积累自己的信息源。</p>
+        </div>
+    </div>
+
+    <!-- 说明区 + 提示块 -->
+    <div class="notice-box">
+        <strong>📎 再次访问小提醒</strong> —— 如果你是通过链接跳转过来，或者已经离开了一段时间，会发现页面上的布局和分类可能有所调整。这不是坏事，内容总是在迭代。保持开放，慢慢看。
+    </div>
+
+    <p>
+        很多人把网站加入收藏夹之后就忘记了，等到需要时才发现自己曾经看过但没记住。在 <a href="https://leyu--wap.com">乐鱼</a> 上阅读，更像是在翻阅一本私人手册：不需要一次性读完，每次取用一部分就好。
+    </p>
+
+    <!-- 另一个提示区（风格差异化） -->
+    <div class="tip-block">
+        <span class="icon">📙</span>
+        <div class="text">
+            <p><strong>如果你打算长期关注</strong></p>
+            <p>  可以每隔一两周回来看看新增的内容。首页的更新摘要会提示最近添加的条目，不需要从头翻到尾。知识库的乐趣在于细水长流。</p>
+        </div>
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要 -->
+    <h2>常见疑问 · 摘要</h2>
+    <div class="faq-group">
+        <div class="faq-item">
+            <div class="faq-q">为什么我上次看到的栏目这次顺序变了？</div>
+            <div class="faq-a">内容块偶尔会重新组织，分类逻辑一直在优化。如果找不到某个旧条目，可以尝试从相关标签或搜索入口回溯。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">是否需要注册或登录才能浏览？</div>
+            <div class="faq-a">目前大部分内容公开可读，无需账户。但部分互动功能可能需要简单注册，具体以页面提示为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">我可以在自己的笔记里引用这里的文章吗？</div>
+            <div class="faq-a">非商用引用通常没问题，建议注明原文出处。<a href="https://leyu--wap.com">乐鱼</a> 本身也鼓励知识的再传播。</div>
+        </div>
+    </div>
+
+    <!-- 最后一个小提示 -->
+    <p style="font-size:0.95rem; margin-top: 1.8rem; color:#5d5247;">
+        ⚡ 如果你觉得内容对你有帮助，不妨把 <strong>乐鱼</strong> 放到浏览器的书签栏或者阅读列表里。持续关注，比一次性收藏更有意义。
+    </p>
+
+    <div class="footer-note">
+        <span>慢慢读 · 常回来</span>
+    </div>
+
+</div>
+</body>
+</html>
